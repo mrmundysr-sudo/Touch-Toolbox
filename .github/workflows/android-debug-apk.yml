@@ -28,9 +28,8 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
-
-      - name: Install Android SDK platform
-        run: sdkmanager "platforms;android-34" "build-tools;34.0.0"
+        with:
+          packages: platforms;android-34 build-tools;34.0.0 platform-tools
 
       - name: Unpack Touch Toolkit source
         run: unzip -q TouchToolkit-1.4-updated-source.zip -d toolkit
