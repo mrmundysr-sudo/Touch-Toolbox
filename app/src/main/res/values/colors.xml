@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The window background is the white work surface itself: a new project is
+         plain white, edge to edge, with no page boundary and no dark surround. -->
+    <color name="bg">#FFFFFFFF</color>
+    <color name="chrome">#FF1E2127</color>
+    <color name="panel">#FF262A32</color>
+    <color name="accent">#FF4C9AFF</color>
+    <color name="text">#FFECEFF4</color>
+    <color name="textdim">#FF9AA4B2</color>
+</resources>

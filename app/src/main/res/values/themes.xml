@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.TouchToolkit" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/bg</item>
+        <!-- The window background and system bars continue the white work
+             surface, so a new project reads as edge to edge white with no
+             dark frame around it. The tool chrome is its own dark overlay. -->
+        <item name="android:statusBarColor">@color/bg</item>
+        <item name="android:navigationBarColor">@color/bg</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
+</resources>
