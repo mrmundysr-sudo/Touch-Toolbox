@@ -31,11 +31,7 @@ jobs:
         with:
           packages: platforms;android-34 build-tools;34.0.0 platform-tools
 
-      - name: Unpack Touch Toolkit source
-        run: unzip -q TouchToolkit-1.4-updated-source.zip -d toolkit
-
       - name: Build, test, and lint
-        working-directory: toolkit
         run: |
           chmod +x gradlew
           ./gradlew --no-daemon :app:testDebugUnitTest --tests dev.touchtoolkit.TouchToolkitTest --tests dev.touchtoolkit.MainActivityTest lintDebug assembleDebug
@@ -43,7 +39,7 @@ jobs:
       - name: Upload APK for phone testing
         uses: actions/upload-artifact@v4
         with:
-          name: TouchToolkit-debug-${{ github.run_number }}
-          path: toolkit/app/build/outputs/apk/debug/app-debug.apk
+          name: TouchToolkit-preserve-original-dimensions-${{ github.run_number }}
+          path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 30
