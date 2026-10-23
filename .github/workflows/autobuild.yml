@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write   # lets the shared workflow publish the DEV/TEST prerelease fallback (claude/** only)
 
 concurrency:
   group: autobuild-${{ github.ref }}
