@@ -1,6 +1,6 @@
-# Touch AutoBuild caller (onboarding branch: pinned to the hub dev branch until the hub is merged).
-# Production pin after approval: ...android-build.yml@<reviewed commit SHA> # v1.0.0 (see autobuild/VERSIONING.md in the hub).
-# Builds every claude/** branch push and manual dispatch; publishes nothing.
+# Touch AutoBuild caller. Pinned to the reviewed hub commit (immutable SHA); see autobuild/VERSIONING.md in touch-development.
+# Bump the SHA only through a reviewed PR.
+# Builds every claude/** branch push and manual dispatch. Publishes only a labelled DEV/TEST prerelease when artifact upload fails.
 name: AutoBuild (dev branches)
 
 on:
@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   build:
-    uses: mrmundysr-sudo/touch-development/.github/workflows/android-build.yml@claude/autobuild-hub
+    uses: mrmundysr-sudo/touch-development/.github/workflows/android-build.yml@1926b52b24140572a299004a023f692f9357b83e # v1.0.0
     with:
       artifact_name: Touch-Toolbox-debug-${{ github.run_number }}
       project_dir: "."
